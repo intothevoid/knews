@@ -14,14 +14,14 @@ export class NewsApiService {
   constructor(private http: HttpClient) { }
 
   initSources() {
-    return this.http.get('https://newsapi.org/v2/sources?language=en&apiKey='+this.API_KEY);
+    return this.http.get<any>('https://newsapi.org/v2/sources?language=en&apiKey='+this.API_KEY);
   }
 
   initArticles() {
-    return this.http.get('https://newsapi.org/v2/sources?techcrunch&apiKey='+this.API_KEY);
+    return this.http.get<any>('https://newsapi.org/v2/sources?techcrunch&apiKey='+this.API_KEY);
   }
 
   getArticlesByID(source: String) {
-    return this.http.get('https://newsapi.org/v2/top-headlines?sources='+source+'&apiKey='+this.API_KEY);
+    return this.http.get<any>('https://newsapi.org/v2/top-headlines?sources='+source+'&apiKey='+this.API_KEY);
   }
 }
