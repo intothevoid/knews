@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ItemComponent } from './item/item.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 // import hacker news api service
 import { HackernewsApiService } from './hackernews-api.service';
 
@@ -18,7 +20,7 @@ import { HackernewsApiService } from './hackernews-api.service';
     FooterComponent,
     ItemComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, HttpClientModule],
   providers: [HackernewsApiService],
   bootstrap: [AppComponent],
 })
