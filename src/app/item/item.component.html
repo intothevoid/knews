@@ -5,16 +5,16 @@
 </div>
 <div *ngIf="item">
   <div class="item-laptop">
-    <p>
-      <a class="title" href="{{ item.url }}">
-        {{ item.title }}
-      </a>
-      <span style="font-size: x-small" class="domain">{{ item.url }}</span>
-    </p>
-    <div class="subtext-laptop">
+    <div class="title">
+      {{ item.title }}
+      <a href="{{ item.url }}" target="_blank"
+        ><span style="font-size: x-small" class="domain">[Link]</span></a
+      >
+    </div>
+    <div class="subtext-laptop" style="font-size: smaller">
       {{ item.score }} points by
       <a href="">{{ item.by }}</a>
-      {{ item.time }}
+      {{ item.time | amFromUnix | amTimeAgo }}
       <a href="">
         <span *ngIf="item.descendants !== 0">
           {{ item.descendants }}
