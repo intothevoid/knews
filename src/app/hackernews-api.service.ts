@@ -15,7 +15,11 @@ export class HackernewsApiService {
 
   // fetch stories from hacker news api
   fetchStories(type: string): Observable<any> {
-    console.log(`${this.baseUrl}${type}.json`);
     return this.http.get<any>(`${this.baseUrl}${type}.json`);
+  }
+
+  // fetch item from hacker news api
+  fetchItem(id: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}item/${id}.json`);
   }
 }
