@@ -13,6 +13,9 @@ import { MomentModule } from 'ngx-moment';
 // import hacker news api service
 import { HackernewsApiService } from './hackernews-api.service';
 
+// Custom pipe
+import { DomainPipe } from './domain.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +23,7 @@ import { HackernewsApiService } from './hackernews-api.service';
     HeaderComponent,
     FooterComponent,
     ItemComponent,
+    DomainPipe,
   ],
   imports: [BrowserModule, HttpClientModule, MomentModule],
   providers: [HackernewsApiService],

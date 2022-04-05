@@ -5,12 +5,14 @@
 </div>
 <div *ngIf="item">
   <div class="item-laptop">
-    <div class="title">
+    <a class="title" href="{{ item.url }}">
       {{ item.title }}
-      <a href="{{ item.url }}" target="_blank"
-        ><span style="font-size: x-small" class="domain">[Link]</span></a
-      >
-    </div>
+    </a>
+    <a href="{{ item.url }}" target="_blank"
+      ><span style="font-size: x-small" class="domain">
+        {{ item.url | domain }}
+      </span></a
+    >
     <div class="subtext-laptop" style="font-size: smaller">
       {{ item.score }} points by
       <a href="">{{ item.by }}</a>
