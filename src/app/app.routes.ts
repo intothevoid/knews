@@ -29,6 +29,11 @@ const routes: Routes = [
     component: StoriesComponent,
     data: { storiesType: 'jobs' },
   },
+  {
+    path: 'best/:page',
+    component: StoriesComponent,
+    data: { storiesType: 'best' },
+  },
   { path: 'item/:id', component: ItemcommentsComponent },
 ];
 
