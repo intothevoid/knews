@@ -18,6 +18,13 @@ export class HackernewsApiService {
     return this.http.get<any>(`${this.baseUrl}${type}.json`);
   }
 
+  // fetch stories from the unoffical hacker news api
+  fetchStoriesUnoffical(storyType: string, pageNo: number): Observable<any> {
+    return this.http.get<any>(
+      `https://node-hnapi.herokuapp.com/${storyType}?page=${pageNo}`
+    );
+  }
+
   // fetch item from hacker news api
   fetchItem(id: number): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}item/${id}.json`);

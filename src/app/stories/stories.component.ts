@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HackernewsApiService } from '../hackernews-api.service';
 
@@ -8,16 +8,19 @@ import { HackernewsApiService } from '../hackernews-api.service';
   styleUrls: ['./stories.component.scss'],
 })
 export class StoriesComponent implements OnInit {
-  items: Array<number>;
+  items: any;
 
-  constructor(private _hackernewsApiService: HackernewsApiService) {
-    this.items = Array<number>(30);
-  }
+  constructor(private _hackernewsApiService: HackernewsApiService) {}
 
   ngOnInit(): void {
     // populate items from hacker news service
-    this._hackernewsApiService.fetchStories('topstories').subscribe((items) => {
-      this.items = items;
-    });
+    this._hackernewsApiService.fetchStoriesUnoffical('news', 1).subscribe(
+      (items) => {
+        this.items = items;
+      },
+      (error) => {
+        console.log('Could not load items: ' + error);
+      }
+    );
   }
 }
