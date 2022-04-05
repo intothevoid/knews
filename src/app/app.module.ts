@@ -15,6 +15,10 @@ import { HackernewsApiService } from './hackernews-api.service';
 
 // Custom pipe
 import { DomainPipe } from './domain.pipe';
+import { ItemcommentsComponent } from './itemcomments/itemcomments.component';
+
+// Routing
+import { routing } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -24,8 +28,9 @@ import { DomainPipe } from './domain.pipe';
     FooterComponent,
     ItemComponent,
     DomainPipe,
+    ItemcommentsComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, MomentModule],
+  imports: [BrowserModule, HttpClientModule, MomentModule, routing],
   providers: [HackernewsApiService],
   bootstrap: [AppComponent],
 })
