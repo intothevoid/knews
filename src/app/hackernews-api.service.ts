@@ -29,4 +29,9 @@ export class HackernewsApiService {
   fetchItem(id: number): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}item/${id}.json`);
   }
+
+  // fetch comments
+  fetchComments(id: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}item/${id}.json`);
+  }
 }

@@ -16,7 +16,7 @@
       {{ item.time_ago }}
       <span>
         |
-        <a href="">
+        <a [routerLink]="['/item', item.id]">
           <span *ngIf="item.comments_count !== 0">
             {{ item.comments_count }}
             <span *ngIf="item.comments_count === 1">comment</span>
@@ -44,7 +44,7 @@
     </div>
     <div class="details">
       {{ item.time_ago }}
-      <a href="" class="comment-number">
+      <a [routerLink]="['/item', item.id]" class="comment-number">
         •
         <span *ngIf="item.comments_count !== 0">
           {{ item.comments_count }}

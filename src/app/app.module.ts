@@ -19,6 +19,8 @@ import { ItemcommentsComponent } from './itemcomments/itemcomments.component';
 
 // Routing
 import { routing } from './app.routes';
+import { CommenttreeComponent } from './commenttree/commenttree.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { routing } from './app.routes';
     ItemComponent,
     DomainPipe,
     ItemcommentsComponent,
+    CommenttreeComponent,
+    CommentComponent,
   ],
   imports: [BrowserModule, HttpClientModule, MomentModule, routing],
   providers: [HackernewsApiService],
