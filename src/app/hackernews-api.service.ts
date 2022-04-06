@@ -19,7 +19,7 @@ export class HackernewsApiService {
   }
 
   // fetch stories from the unoffical hacker news api
-  fetchStoriesUnoffical(storyType: string, pageNo: number): Observable<any> {
+  fetchStoriesUnofficial(storyType: string, pageNo: number): Observable<any> {
     return this.http.get<any>(
       `https://node-hnapi.herokuapp.com/${storyType}?page=${pageNo}`
     );
